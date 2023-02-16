@@ -46,7 +46,7 @@ if __name__ == '__main__':
         time.sleep(4)
 
         #get date and time 
-        current_datetime = datetime.datetime.now()
+        current_datetime = datetime.now()
         # Get the year, month, and day
         year = current_datetime.year
         month = current_datetime.month
@@ -59,7 +59,7 @@ if __name__ == '__main__':
         """your code here"""
         #publish date and time in their own topics
         """your code here"""
-        client.publish("luoc/datetime", f"{current_datetime.strftime("%Y-%m-%d %H:%M:%S")}")
+        client.publish("luoc/datetime", current_datetime.strftime("%Y-%m-%d %H:%M:%S"))
         print("Current date and time:", current_datetime.strftime("%Y-%m-%d %H:%M:%S"))
         time.sleep(4)
 
