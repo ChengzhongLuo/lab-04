@@ -19,6 +19,9 @@ def on_connect(client, userdata, flags, rc):
     #Add the custom callbacks by indicating the topic and the name of the callback handle
     client.message_callback_add("luoc/ipinfo", on_message_from_ipinfo)
 
+    client.message_callback_add("luoc/datetime", on_message_from_datetime)
+
+
 
 """This object (functions are objects!) serves as the default callback for 
 messages received when another node publishes a message this client is 
@@ -31,7 +34,8 @@ def on_message(client, userdata, msg):
 def on_message_from_ipinfo(client, userdata, message):
    print("Custom callback  - IP Message: "+message.payload.decode())
 
-
+def on_message_from_datetime(client, userdata, message):
+   print("Custom callback  - Datetime: "+message.payload.decode())
 
 
 if __name__ == '__main__':
@@ -69,4 +73,3 @@ if __name__ == '__main__':
     client.loop_forever()
 
 
-    
