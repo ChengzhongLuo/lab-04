@@ -14,7 +14,7 @@ def on_connect(client, userdata, flags, rc):
 
 if __name__ == '__main__':
     #get IP address
-    ip_address=0 
+    ip_address=68.181.32.115 
     """your code here"""
     #create a client object
     client = mqtt.Client()
@@ -41,11 +41,37 @@ if __name__ == '__main__':
 
     while True:
         #replace user with your USC username in all subscriptions
-        client.publish("user/ipinfo", f"{ip_address}")
+        client.publish("luoc/ipinfo", f"{ip_address}")
         print("Publishing ip address")
         time.sleep(4)
 
         #get date and time 
+        current_datetime = datetime.datetime.now()
+        # Get the year, month, and day
+        year = current_datetime.year
+        month = current_datetime.month
+        day = current_datetime.day
+
+        # Get the hour, minute, and second
+        hour = current_datetime.hour
+        minute = current_datetime.minute
+        second = current_datetime.second
         """your code here"""
         #publish date and time in their own topics
         """your code here"""
+        client.publish("luoc/datetime", f"{ip_address}")
+        print("Current date and time:", current_datetime.strftime("%Y-%m-%d %H:%M:%S"))
+        time.sleep(4)
+
+
+
+
+
+
+
+
+
+
+
+
+
