@@ -15,6 +15,9 @@ def on_connect(client, userdata, flags, rc):
     print("Connected to server (i.e., broker) with result code "+str(rc))
     #replace user with your USC username in all subscriptions
     client.subscribe("luoc/ipinfo")
+
+    client.subscribe("luoc/datetime")
+
     
     #Add the custom callbacks by indicating the topic and the name of the callback handle
     client.message_callback_add("luoc/ipinfo", on_message_from_ipinfo)
