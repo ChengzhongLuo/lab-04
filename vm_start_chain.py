@@ -39,6 +39,7 @@ if __name__ == '__main__':
     #create a client object
     client = mqtt.Client()
     
+    client.on_message = on_message
     #attach the on_connect() callback function defined above to the mqtt client
     client.on_connect = on_connect
     """Connect using the following hostname, port, and keepalive interval (in 
@@ -58,8 +59,7 @@ if __name__ == '__main__':
     incoming and outgoing mqtt messages."""
     
     num = 0
-    client.loop_start()
-    time.sleep(1)
+    client.loop_forever()
  
 while num == 0:
     client.publish("luoc/ping", num)
