@@ -59,12 +59,15 @@ if __name__ == '__main__':
     incoming and outgoing mqtt messages."""
     
     num = 0
-    client.loop_forever()
+    client.loop_start()
+    time.sleep(1)
  
 while num == 0:
     client.publish("luoc/ping", num)
     print("Publishing", num, "from start_chain (initiate)")
     time.sleep(4)
+    
+client.forever()
 
 
 
