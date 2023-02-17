@@ -56,11 +56,12 @@ if __name__ == '__main__':
 
     """ask paho-mqtt to spawn a separate thread to handle
     incoming and outgoing mqtt messages."""
+    
+    num = 0
     client.loop_start()
     time.sleep(1)
  
 while num == 0:
-    num = 0
     client.publish("luoc/ping", num)
     print("Publishing", num, "from start_chain (initiate)")
     time.sleep(4)
