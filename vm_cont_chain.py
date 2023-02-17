@@ -36,8 +36,13 @@ if __name__ == '__main__':
     #create a client object
     client = mqtt.Client()
     
+    client.on_message = on_message
     #attach the on_connect() callback function defined above to the mqtt client
     client.on_connect = on_connect
+    
+    
+    
+    
     """Connect using the following hostname, port, and keepalive interval (in 
     seconds). We added "host=", "port=", and "keepalive=" for illustrative 
     purposes. You can omit this in python. For example:
@@ -53,8 +58,7 @@ if __name__ == '__main__':
 
     """ask paho-mqtt to spawn a separate thread to handle
     incoming and outgoing mqtt messages."""
-    client.loop_start()
-    time.sleep(1)
+    client.loop_forever()
     
 
 
