@@ -59,6 +59,7 @@ if __name__ == '__main__':
     client.loop_start()
     time.sleep(1)
     
+    num = 0
     client.publish("luoc/ping", num)
     print("Publishing", num, "from start_chain (initiate)")
     time.sleep(4)
