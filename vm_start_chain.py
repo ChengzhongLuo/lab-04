@@ -39,7 +39,7 @@ if __name__ == '__main__':
     #create a client object
     client = mqtt.Client()
     
-    client.on_message = on_message
+    client.on_message = on_message_from_pong
     #attach the on_connect() callback function defined above to the mqtt client
     client.on_connect = on_connect
     """Connect using the following hostname, port, and keepalive interval (in 
