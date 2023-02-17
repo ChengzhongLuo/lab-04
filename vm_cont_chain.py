@@ -31,7 +31,7 @@ def on_message_from_ping(client, userdata, message):
 
 if __name__ == '__main__':
     #get IP address
-    ip_address=68.181.32.115 
+    ip_address="68.181.32.115" 
     """your code here"""
     #create a client object
     client = mqtt.Client()
